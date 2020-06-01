@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templating\Templates\SwaggerDoc.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templating\Templates\SwaggerDoc.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.OpenApi" Version="1.1.4" />
+		<PackageReference Include="RazorEngine.NetCore" Version="2.2.6" />
+		<PackageReference Include="Spire.Office" Version="5.5.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.4.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.4.1" />
+	</ItemGroup>
+
+
+</Project>
