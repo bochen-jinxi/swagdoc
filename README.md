@@ -1,6 +1,7 @@
 # swgdoc
 基于swagger自动生成word文档
 //注入AddSwaggerGen服务
+
  public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
