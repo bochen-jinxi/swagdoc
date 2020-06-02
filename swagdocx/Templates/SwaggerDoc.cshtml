@@ -1,0 +1,238 @@
+﻿@*@model Microsoft.OpenApi.Models.OpenApiDocument*@
+@using System.Linq
+@using Microsoft.OpenApi.Models;
+@{
+    var obj = (OpenApiDocument)Model;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger API文档代码生成器</title>
+    <style type='text/css'>
+        table, table td, table th {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+
+        table {
+            table-layout: fixed;
+            word-break: break-all;
+        }
+
+        tr {
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .opblock-summary-method {
+            font-size: 14px;
+            font-weight: 700;
+            min-width: 80px;
+            padding: 6px 15px;
+            text-align: center;
+            border-radius: 3px;
+            background: #000000;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+            font-family: sans-serif;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div style='width: 1000px; margin: 0 auto'>
+        <h1 style="font-size: 36px;margin: 0;font-family: sans-serif;color: #3b4151" align="center">@obj.Info.Title</h1>
+        @if (obj.Info.Contact != null)
+        {
+            <h4>联系方式</h4>
+            <span>作者：@obj.Info.Contact.Name</span>
+            <br>
+            <a href="@obj.Info.Contact.Url" target="_blank" rel="noopener noreferrer" class="link">@obj.Info.Contact.Name - Website</a>
+            <br>
+        }
+        <h3>接口描述</h3>
+        <span>@obj.Info.Description</span>
+        <br>
+        @foreach (var item in obj.Paths.Keys.ToArray())
+        {
+            var pOpenApiPathItem = obj.Paths[item];
+            var oOpenApiOperation = obj.Paths[item].Operations;
+            var opKey = oOpenApiOperation.Keys;
+            foreach (var k in opKey)
+            {
+                var vOpenApiOperation = oOpenApiOperation[k];
+                <h3 style="font-size: 18px;margin: 0;font-family: sans-serif;color: #524151" align="center">@vOpenApiOperation.Summary</h3>
+                <table border='1' cellspacing='0' cellpadding='0' width='100%' style="table-layout: fixed; word-break: break-all; border: 1px solid #000000; border-collapse: collapse;">
+                    <tr style="background-color: rgb(84, 127, 177);" align="center">
+                        <td colspan='5'></td>
+                    </tr>
+                    <tr style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">接口描述</td>
+                        <td colspan='4'>
+                            @{
+                                if (vOpenApiOperation.Description != null)
+                                {
+                                    @:@vOpenApiOperation.Description.ToString()
+                                }
+                                else if (vOpenApiOperation.Summary != null)
+                                {
+                                    @:@vOpenApiOperation.Summary.ToString()
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">URL</td>
+                        <td colspan='4'>@item</td>
+                    </tr>
+                    <tr style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">请求方式</td>
+                        <td colspan='4'>
+                            @if (k.ToString() == "Get")
+                            {
+                                <span style="background: #61affe;" class="opblock-summary-method">@k</span>
+                            }
+                            @if (k.ToString() == "Post")
+                            {
+                                <span style="background: #49cc90;" class="opblock-summary-method">@k</span>
+                            }
+                            @if (k.ToString() == "Delete")
+                            {
+                                <span style="background: #f93e3e;" class="opblock-summary-method">@k</span>
+                            }
+                            @if (k.ToString() == "Put")
+                            {
+                                <span style="background: #fca130; ;" class="opblock-summary-method">@k</span>
+                            }
+                            @if (k.ToString() == "Patch")
+                            {
+                                <span style="background: #50e3c2;" class="opblock-summary-method">@k</span>
+                            }
+                        </td>
+                    </tr>
+                    <tr style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">请求类型</td>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'>
+                            @if (vOpenApiOperation.RequestBody != null && vOpenApiOperation.RequestBody.Content.Count > 0)
+                            {
+                                foreach (var request in vOpenApiOperation.RequestBody.Content)
+                                {
+                                    @: @request.Key
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">返回类型</td>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'>
+                            @if (vOpenApiOperation.Responses != null && vOpenApiOperation.Responses.Count > 0)
+                            {
+                                foreach (var response in vOpenApiOperation.Responses)
+                                {
+                                    foreach (var valu in response.Value.Content)
+                                    {
+                                        @: @valu.Key
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                    @{ var isAbleDisp = false; }
+                    @if (vOpenApiOperation.Parameters != null && vOpenApiOperation.Parameters.Count > 0)
+                    {
+                        isAbleDisp = true;
+                        <tr style="background-color: rgb(84, 127, 177);" align='center'>
+                            <td style="border: 1px solid #000000; border-collapse: collapse;">参数名</td>
+                            <td style="border: 1px solid #000000; border-collapse: collapse;">参数类型</td>
+                            <td style="border: 1px solid #000000; border-collapse: collapse;">是否必填</td>
+                            <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'>说明</td>
+                        </tr>
+                    }
+                    @if (vOpenApiOperation.Parameters != null && vOpenApiOperation.Parameters.Count > 0)
+                    {
+                        @foreach (var param in vOpenApiOperation.Parameters)
+                        {
+                            <tr align='center' style="border: 1px solid #000000; border-collapse: collapse;">
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">@param.Name</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">@param.Schema.Type</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">@param.Required</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'>@param.Description</td>
+                            </tr>
+                        }
+                    }
+                    @if (vOpenApiOperation.RequestBody != null && vOpenApiOperation.RequestBody.Content.Count > 0)
+                    {
+                        foreach (var request in vOpenApiOperation.RequestBody.Content)
+                        {
+                            if (isAbleDisp)
+                            {
+                                break;
+                            }
+                            if (vOpenApiOperation.RequestBody.Content[request.Key].Encoding.Count > 0)
+                            {
+                                isAbleDisp = false;
+                                break;
+                            }
+                            else
+                            {
+                                isAbleDisp = true;
+                            }
+                        }
+                        @if (!isAbleDisp)
+                        {
+                            <tr style="background-color: rgb(84, 127, 177);" align='center'>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">参数名</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">参数类型</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">是否必填</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'>说明</td>
+                            </tr>
+                        }
+                        foreach (var request in vOpenApiOperation.RequestBody.Content)
+                        {
+                            var oProperties = vOpenApiOperation.RequestBody.Content[request.Key].Schema.Properties;
+                            var kays = oProperties.Keys;
+                            foreach (var kay in kays)
+                            {
+                                var oOpenApiSchema = oProperties[kay];
+                                <tr align='center' style="border: 1px solid #000000; border-collapse: collapse;">
+                                    <td style="border: 1px solid #000000; border-collapse: collapse;">@kay</td>
+                                    <td style="border: 1px solid #000000; border-collapse: collapse;">@oOpenApiSchema.Type</td>
+                                    <td style="border: 1px solid #000000; border-collapse: collapse;">False</td>
+                                    <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'>@oOpenApiSchema.Description</td>
+                                </tr>
+                            }
+                        }
+                    }
+                    <tr style="background-color: rgb(84, 127, 177);" align='center'>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;">状态码</td>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'>说明</td>
+                    </tr>
+                    @if (vOpenApiOperation.Responses != null && vOpenApiOperation.Responses.Count > 0)
+                    {
+                        foreach (var response in vOpenApiOperation.Responses)
+                        {
+                            <tr align='center' style="border: 1px solid #000000; border-collapse: collapse;">
+                                <td style="border: 1px solid #000000; border-collapse: collapse;">@response.Key</td>
+                                <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'>@response.Value.Description</td>
+                            </tr>
+                        }
+                    }
+                    <tr style="background-color: rgb(84, 127, 177);">
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='5'>示例</td>
+                    </tr>
+                    <tr style="height: 40px;" style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="background-color: rgb(84, 127, 177);">请求参数</td>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'></td>
+                    </tr>
+                    <tr style="height: 40px;" style="border: 1px solid #000000; border-collapse: collapse;">
+                        <td style="background-color: rgb(84, 127, 177);">返回值</td>
+                        <td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'></td>
+                    </tr>
+                </table>
+                <br>
+            }
+        }
+    </div>
+</body>
+</html>

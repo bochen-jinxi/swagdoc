@@ -68,7 +68,7 @@ namespace swagdocx.Controllers
         {
             var document = SwaggerGenerator.GetSwagger("v1");
             string memi = string.Empty;
-             var stream = new SpireDocHelper().GetSwDoc(document, out memi, $"Templating\\Templates\\SwaggerDoc.cshtml");
+             var stream = new SpireDocHelper().GetSwDoc(document, out memi, $"Templates\\SwaggerDoc.cshtml");
              return File(stream, memi, "api简化文档");
         }
 

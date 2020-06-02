@@ -5,11 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Templating\Templates\SwaggerDoc.cshtml" />
+    <None Include="Templates\SwaggerDoc.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SwgDocGen\SwgDocGen.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Templates\SwaggerDoc.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 
