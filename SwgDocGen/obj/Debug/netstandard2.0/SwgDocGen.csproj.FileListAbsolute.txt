@@ -1,9 +1,0 @@
-G:\ThirdParty\swagdocx\SwgDocGen\obj\Debug\netstandard2.0\SwgDocGen.csproj.CoreCompileInputs.cache
-G:\ThirdParty\swagdocx\SwgDocGen\obj\Debug\netstandard2.0\SwgDocGen.AssemblyInfoInputs.cache
-G:\ThirdParty\swagdocx\SwgDocGen\obj\Debug\netstandard2.0\SwgDocGen.AssemblyInfo.cs
-G:\ThirdParty\swagdocx\SwgDocGen\bin\Debug\netstandard2.0\Templating\Templates\SwaggerDoc.cshtml
-G:\ThirdParty\swagdocx\SwgDocGen\bin\Debug\netstandard2.0\SwgDocGen.deps.json
-G:\ThirdParty\swagdocx\SwgDocGen\bin\Debug\netstandard2.0\SwgDocGen.dll
-G:\ThirdParty\swagdocx\SwgDocGen\bin\Debug\netstandard2.0\SwgDocGen.pdb
-G:\ThirdParty\swagdocx\SwgDocGen\obj\Debug\netstandard2.0\SwgDocGen.dll
-G:\ThirdParty\swagdocx\SwgDocGen\obj\Debug\netstandard2.0\SwgDocGen.pdb
