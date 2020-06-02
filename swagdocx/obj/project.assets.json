@@ -1547,7 +1547,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "SwgDocGen/1.0.0": {
+      "SwgDocGen/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -5555,7 +5555,7 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "SwgDocGen/1.0.0": {
+    "SwgDocGen/1.0.2": {
       "type": "project",
       "path": "../SwgDocGen/SwgDocGen.csproj",
       "msbuildProject": "../SwgDocGen/SwgDocGen.csproj"
@@ -5563,7 +5563,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "SwgDocGen >= 1.0.0"
+      "SwgDocGen >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -5573,11 +5573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj",
+      "projectUniqueName": "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj",
       "projectName": "swagdocx",
-      "projectPath": "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj",
+      "projectPath": "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "G:\\ThirdParty\\swagdocx\\swagdocx\\obj\\",
+      "outputPath": "G:\\ThirdParty\\swgdoc\\swagdocx\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5599,8 +5599,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj": {
-              "projectPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj"
+            "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj": {
+              "projectPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj"
             }
           }
         }

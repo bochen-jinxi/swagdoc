@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
+    <Description>基于swagger自动生成word文档</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +23,21 @@
 		<PackageReference Include="Spire.Office" Version="5.5.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.4.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 

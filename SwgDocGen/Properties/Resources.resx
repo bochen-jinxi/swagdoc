@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SwaggerDoc" xml:space="preserve">
+    <value>@*@model Microsoft.OpenApi.Models.OpenApiDocument*@
+@using System.Linq
+@using Microsoft.OpenApi.Models;
+@{
+    var obj = (OpenApiDocument)Model;
+}
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Swagger API文档代码生成器&lt;/title&gt;
+    &lt;style type='text/css'&gt;
+        table, table td, table th {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+
+        table {
+            table-layout: fixed;
+            word-break: break-all;
+        }
+
+        tr {
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .opblock-summary-method {
+            font-size: 14px;
+            font-weight: 700;
+            min-width: 80px;
+            padding: 6px 15px;
+            text-align: center;
+            border-radius: 3px;
+            background: #000000;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+            font-family: sans-serif;
+            color: #fff;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style='width: 1000px; margin: 0 auto'&gt;
+    &lt;h1 style="font-size: 36px;margin: 0;font-family: sans-serif;color: #3b4151" align="center"&gt;@obj.Info.Title&lt;/h1&gt;
+    &lt;h4&gt;联系方式&lt;/h4&gt;
+    &lt;span&gt;作者：@obj.Info.Contact.Name&lt;/span&gt;
+    &lt;br&gt;
+    &lt;a href="@obj.Info.Contact.Url" target="_blank" rel="noopener noreferrer" class="link"&gt;@obj.Info.Contact.Name - Website&lt;/a&gt;
+    &lt;br&gt;
+    &lt;h3&gt;接口描述&lt;/h3&gt;
+    &lt;span&gt;@obj.Info.Description&lt;/span&gt;
+    &lt;br&gt;
+    @foreach (var item in obj.Paths.Keys.ToArray())
+    {
+        var pOpenApiPathItem = obj.Paths[item];
+        var oOpenApiOperation = obj.Paths[item].Operations;
+        var opKey = oOpenApiOperation.Keys;
+        foreach (var k in opKey)
+        {
+            var vOpenApiOperation = oOpenApiOperation[k];
+            &lt;h3&gt;@vOpenApiOperation.Summary&lt;/h3&gt;
+            &lt;table border='1' cellspacing='0' cellpadding='0' width='100%' style="table-layout: fixed; word-break: break-all; border: 1px solid #000000; border-collapse: collapse;"&gt;
+                &lt;tr style="background-color: rgb(84, 127, 177);" align="center"&gt;
+                    &lt;td colspan='5'&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;接口描述&lt;/td&gt;
+                    &lt;td colspan='4'&gt;
+                        @{
+                            if (vOpenApiOperation.Description != null)
+                            {
+                                @:@vOpenApiOperation.Description.ToString()
+                            }
+                            else if (vOpenApiOperation.Summary != null)
+                            {
+                                @:@vOpenApiOperation.Summary.ToString()
+                            }
+                        }
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;URL&lt;/td&gt;
+                    &lt;td colspan='4'&gt;@item&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;请求方式&lt;/td&gt;
+                    &lt;td colspan='4'&gt;
+                        @if (k.ToString() == "Get")
+                        {
+                            &lt;span style="background: #61affe;" class="opblock-summary-method"&gt;@k&lt;/span&gt;
+                        }
+                        @if (k.ToString() == "Post")
+                        {
+                            &lt;span style="background: #49cc90;" class="opblock-summary-method"&gt;@k&lt;/span&gt;
+                        }
+                        @if (k.ToString() == "Delete")
+                        {
+                            &lt;span style="background: #f93e3e;" class="opblock-summary-method"&gt;@k&lt;/span&gt;
+                        }
+                        @if (k.ToString() == "Put")
+                        {
+                            &lt;span style="background: #fca130; ;" class="opblock-summary-method"&gt;@k&lt;/span&gt;
+                        }
+                        @if (k.ToString() == "Patch")
+                        {
+                            &lt;span style="background: #50e3c2;" class="opblock-summary-method"&gt;@k&lt;/span&gt;
+                        }
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;请求类型&lt;/td&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;
+                        @if (vOpenApiOperation.RequestBody != null &amp;&amp; vOpenApiOperation.RequestBody.Content.Count &gt; 0)
+                        {
+                            foreach (var request in vOpenApiOperation.RequestBody.Content)
+                            {
+                                @: @request.Key
+                            }
+                        }
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;返回类型&lt;/td&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;
+                        @if (vOpenApiOperation.Responses != null &amp;&amp; vOpenApiOperation.Responses.Count &gt; 0)
+                        {
+                            foreach (var response in vOpenApiOperation.Responses)
+                            {
+                                foreach (var valu in response.Value.Content)
+                                {
+                                    @: @valu.Key
+                                }
+                            }
+                        }
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                @{ var isAbleDisp = false; }
+                @if (vOpenApiOperation.Parameters != null &amp;&amp; vOpenApiOperation.Parameters.Count &gt; 0)
+                {
+                    isAbleDisp = true;
+                    &lt;tr style="background-color: rgb(84, 127, 177);" align='center'&gt;
+                        &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;参数名&lt;/td&gt;
+                        &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;参数类型&lt;/td&gt;
+                        &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;是否必填&lt;/td&gt;
+                        &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'&gt;说明&lt;/td&gt;
+                    &lt;/tr&gt;
+                }
+                @if (vOpenApiOperation.Parameters != null &amp;&amp; vOpenApiOperation.Parameters.Count &gt; 0)
+                {
+                    @foreach (var param in vOpenApiOperation.Parameters)
+                     {
+                         &lt;tr align='center' style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@param.Name&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@param.Schema.Type&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@param.Required&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'&gt;@param.Description&lt;/td&gt;
+                         &lt;/tr&gt;
+                     }
+                }
+                @if (vOpenApiOperation.RequestBody != null &amp;&amp; vOpenApiOperation.RequestBody.Content.Count &gt; 0)
+                {
+                    foreach (var request in vOpenApiOperation.RequestBody.Content)
+                    {
+                        if (isAbleDisp)
+                        {
+                            break;
+                        }
+                        if (vOpenApiOperation.RequestBody.Content[request.Key].Encoding.Count &gt; 0)
+                        {
+                            isAbleDisp = false;
+                            break;
+                        }
+                        else
+                        {
+                            isAbleDisp = true;
+                        }
+                    }
+                    @if (!isAbleDisp)
+                     {
+                         &lt;tr style="background-color: rgb(84, 127, 177);" align='center'&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;参数名&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;参数类型&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;是否必填&lt;/td&gt;
+                             &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'&gt;说明&lt;/td&gt;
+                         &lt;/tr&gt;
+                     }
+                    foreach (var request in vOpenApiOperation.RequestBody.Content)
+                    {
+                        var oProperties = vOpenApiOperation.RequestBody.Content[request.Key].Schema.Properties;
+                        var kays = oProperties.Keys;
+                        foreach (var kay in kays)
+                        {
+                            var oOpenApiSchema = oProperties[kay];
+                            &lt;tr align='center' style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                                &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@kay&lt;/td&gt;
+                                &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@oOpenApiSchema.Type&lt;/td&gt;
+                                &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;False&lt;/td&gt;
+                                &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='2'&gt;@oOpenApiSchema.Description&lt;/td&gt;
+                            &lt;/tr&gt;
+                        }
+                    }
+                }
+                &lt;tr style="background-color: rgb(84, 127, 177);" align='center'&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;状态码&lt;/td&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;说明&lt;/td&gt;
+                &lt;/tr&gt;
+                @if (vOpenApiOperation.Responses != null &amp;&amp; vOpenApiOperation.Responses.Count &gt; 0)
+                {
+                    foreach (var response in vOpenApiOperation.Responses)
+                    {
+                        &lt;tr align='center' style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                            &lt;td style="border: 1px solid #000000; border-collapse: collapse;"&gt;@response.Key&lt;/td&gt;
+                            &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;@response.Value.Description&lt;/td&gt;
+                        &lt;/tr&gt;
+                    }
+                }
+                &lt;tr style="background-color: rgb(84, 127, 177);"&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='5'&gt;示例&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="height: 40px;" style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="background-color: rgb(84, 127, 177);"&gt;请求参数&lt;/td&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr style="height: 40px;" style="border: 1px solid #000000; border-collapse: collapse;"&gt;
+                    &lt;td style="background-color: rgb(84, 127, 177);"&gt;返回值&lt;/td&gt;
+                    &lt;td style="border: 1px solid #000000; border-collapse: collapse;" colspan='4'&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;br&gt;
+        }
+    }
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+</root>

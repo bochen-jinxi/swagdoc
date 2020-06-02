@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.OpenApi.Models;
@@ -79,14 +80,40 @@ namespace SwgDocGen
             }
         }
 
-        public Stream GetSwDoc(OpenApiDocument document,out string memi)
+        
+
+        public Stream GetSwDoc(OpenApiDocument document, out string memi, string tplpath=null)
         {
-            var html = T4Helper.GeneritorSwaggerHtml($"Templating\\Templates\\SwaggerDoc.cshtml", document);
+
+            var html = string.Empty;
+            if (string.IsNullOrEmpty(tplpath))
+            {
+                Assembly asm = Assembly.Load("SwgDocGen");//文件所在的项目 
+                Stream sm = asm.GetManifestResourceStream("SwgDocGen.Templating.Templates.SwaggerDoc.cshtml");//文件的路径,程序集.路径.文件名 
+                if (sm == null)
+                {
+                    html = T4Helper.GeneritorSwaggerHtml(Properties.Resources.SwaggerDoc, document); 
+                }
+                else
+                {
+                    using (StreamReader sr = new StreamReader(sm))
+                    {
+                        var content = sr.ReadToEnd();
+                        html = T4Helper.GeneritorSwaggerHtml(content, document);
+                    }
+                }
+            }
+            else
+            {
+                  html = T4Helper.GeneritorSwaggerHtmlByPath(tplpath, document);
+            }
             var stream = new SpireDocHelper().SwaggerHtmlConvers(html, ".docx", out memi);
             return stream;
         }
-
-
     }
+
+
+
+    
 
 }

@@ -7076,13 +7076,13 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj",
+      "projectUniqueName": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj",
       "projectName": "SwgDocGen",
-      "projectPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj",
+      "projectPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\obj\\",
+      "outputPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

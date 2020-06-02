@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj": {}
+    "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj": {}
   },
   "projects": {
-    "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj": {
+    "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj",
+        "projectUniqueName": "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj",
         "projectName": "swagdocx",
-        "projectPath": "G:\\ThirdParty\\swagdocx\\swagdocx\\swagdocx.csproj",
+        "projectPath": "G:\\ThirdParty\\swgdoc\\swagdocx\\swagdocx.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "G:\\ThirdParty\\swagdocx\\swagdocx\\obj\\",
+        "outputPath": "G:\\ThirdParty\\swgdoc\\swagdocx\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -33,8 +33,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj": {
-                "projectPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj"
+              "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj": {
+                "projectPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj": {
-      "version": "1.0.0",
+    "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj": {
+      "version": "1.0.2",
       "restore": {
-        "projectUniqueName": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj",
+        "projectUniqueName": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj",
         "projectName": "SwgDocGen",
-        "projectPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\SwgDocGen.csproj",
+        "projectPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\SwgDocGen.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "G:\\ThirdParty\\swagdocx\\SwgDocGen\\obj\\",
+        "outputPath": "G:\\ThirdParty\\swgdoc\\SwgDocGen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
