@@ -47,12 +47,13 @@
         }
         
        //Controller 生成word文档
-        public ISwaggerProvider SwaggerGenerator { get; }
-        private readonly ILogger<WeatherForecastController> _logger;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ISwaggerProvider SwaggerGenerator)
+          public ISwaggerProvider SwaggerGenerator { get; }
+        public IOptions<SpireDocHelper> SpireDocHelper { get; }
+        public WeatherForecastController(ISwaggerProvider SwaggerGenerator, IOptions<SpireDocHelper> SpireDocHelper)
         {
             this.SwaggerGenerator = SwaggerGenerator;
-            _logger = logger;
+            this.SpireDocHelper = SpireDocHelper;
+           
         }
         /// <summary>
         /// 获取
@@ -63,8 +64,20 @@
         {
             var document = SwaggerGenerator.GetSwagger("v1");
             string memi = string.Empty;
-            var stream = new SpireDocHelper().GetSwDoc(document, out memi);
-            return File(stream, memi, "sapi简化文档");
+            var stream = SpireDocHelper.Value.GetSwDoc(document, out memi);
+            return File(stream, memi, "api简化文档");
+        }
 
+        /// <summary>
+        /// 获取
+        /// </summary>
+        /// <returns>返回车</returns>
+        [HttpGet("/GetSwDocByPath")]
+        public IActionResult GetSwDocByPath()
+        {
+            var document = SwaggerGenerator.GetSwagger("v1");
+            string memi = string.Empty;
+             var stream = new SpireDocHelper().GetSwDoc(document, out memi, $"Templating\\Templates\\SwaggerDoc.cshtml");
+             return File(stream, memi, "api简化文档");
         }
         
