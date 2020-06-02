@@ -5,14 +5,14 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Spire.Doc;
 using Spire.Doc.Documents;
 using Swashbuckle.AspNetCore.SwaggerGen;
-
 namespace SwgDocGen
 {
-    public class SpireDocHelper
+    public class SpireDocHelper: IOptions<SpireDocHelper>
     {
         public Stream SwaggerHtmlConvers(string html, string type, out string memi)
         {
@@ -110,6 +110,8 @@ namespace SwgDocGen
             var stream = new SpireDocHelper().SwaggerHtmlConvers(html, ".docx", out memi);
             return stream;
         }
+        public SpireDocHelper Value => this;
+   
     }
 
 
