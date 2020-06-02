@@ -5,13 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Templating\Templates\SwaggerDoc.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\Templates\SwaggerDoc.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <None Include="Templating\Templates\SwaggerDoc.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
