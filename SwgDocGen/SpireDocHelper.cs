@@ -92,7 +92,7 @@ namespace SwgDocGen
                 Stream sm = asm.GetManifestResourceStream("SwgDocGen.Templating.Templates.SwaggerDoc.cshtml");//文件的路径,程序集.路径.文件名 
                 if (sm == null)
                 {
-                   // html = ""; 
+                    html = T4Helper.GeneritorSwaggerHtml(Properties.Resources.SwagDoc, document); 
                 }
                 else
                 {
