@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -9,11 +7,22 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Spire.Doc;
 using Spire.Doc.Documents;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using SwgDocGen.Properties;
+
 namespace SwgDocGen
 {
-    public class SpireDocHelper: IOptions<SpireDocHelper>
+    /// <summary>
+    /// office文档助手
+    /// </summary>
+    public class SpireDocHelper : IOptions<SpireDocHelper>
     {
+        /// <summary>
+        /// 生成流
+        /// </summary>
+        /// <param name="html">内容</param>
+        /// <param name="type">类型</param>
+        /// <param name="memi">输出类型</param>
+        /// <returns></returns>
         public Stream SwaggerHtmlConvers(string html, string type, out string memi)
         {
             var fileName = Guid.NewGuid() + type;
@@ -44,8 +53,7 @@ namespace SwgDocGen
                         break;
                     case ".html":
                         //Html
-                        var fs = new FileStream(addrUrl, FileMode.Append, FileAccess.Write,
-                            FileShare.None); //html直接写入不用spire.doc
+                        var fs = new FileStream(addrUrl, FileMode.Append, FileAccess.Write, FileShare.None); //html直接写入不用spire.doc
                         var sw = new StreamWriter(fs); // 创建写入流
                         sw.WriteLine(html); // 写入Hello World
                         sw.Close(); //关闭文件
@@ -80,42 +88,38 @@ namespace SwgDocGen
             }
         }
 
-        
-
-        public Stream GetSwDoc(OpenApiDocument document, out string memi, string tplpath=null)
+        /// <summary>
+        /// 生成word文档
+        /// </summary>
+        /// <param name="document">openopi对象</param>
+        /// <param name="memi">类型</param>
+        /// <param name="tplpath">路径</param>
+        /// <returns></returns>
+        public Stream GetSwDoc(OpenApiDocument document, out string memi, string tplpath = null)
         {
-
             var html = string.Empty;
             if (string.IsNullOrEmpty(tplpath))
             {
-                Assembly asm = Assembly.Load("SwgDocGen");//文件所在的项目 
-                Stream sm = asm.GetManifestResourceStream("SwgDocGen.Templating.Templates.SwaggerDoc.cshtml");//文件的路径,程序集.路径.文件名 
+                var asm = Assembly.Load("SwgDocGen"); //文件所在的项目 
+                var sm = asm.GetManifestResourceStream(
+                    "SwgDocGen.Templating.Templates.SwaggerDoc.cshtml"); //文件的路径,程序集.路径.文件名 
                 if (sm == null)
-                {
-                    html = T4Helper.GeneritorSwaggerHtml(Properties.Resources.SwagDoc, document); 
-                }
+                    html = T4Helper.GeneritorSwaggerHtml(Resources.SwagDoc, document);
                 else
-                {
-                    using (StreamReader sr = new StreamReader(sm))
+                    using (var sr = new StreamReader(sm))
                     {
                         var content = sr.ReadToEnd();
                         html = T4Helper.GeneritorSwaggerHtml(content, document);
                     }
-                }
             }
             else
             {
-                  html = T4Helper.GeneritorSwaggerHtmlByPath(tplpath, document);
+                html = T4Helper.GeneritorSwaggerHtmlByPath(tplpath, document);
             }
             var stream = new SpireDocHelper().SwaggerHtmlConvers(html, ".docx", out memi);
             return stream;
         }
+
         public SpireDocHelper Value => this;
-   
     }
-
-
-
-    
-
 }

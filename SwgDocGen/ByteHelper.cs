@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
 namespace SwgDocGen
 {
+    /// <summary>
+    /// 二进制助手
+    /// </summary>
     public class ByteHelper
     {
+        /// <summary>
+        /// 流转二进制
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
         public static byte[] StreamToBytes(Stream stream)
         {
             var bytes = new byte[stream.Length];
@@ -15,7 +20,12 @@ namespace SwgDocGen
             stream.Seek(0, SeekOrigin.Begin);
             return bytes;
         }
-        /// 将 byte[] 转成 Stream
+
+        /// <summary>
+        /// 二进制转流
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public static Stream BytesToStream(byte[] bytes)
         {
             Stream stream = new MemoryStream(bytes);
