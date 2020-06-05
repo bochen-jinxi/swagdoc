@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Templating\Templates\SwaggerDoc.cshtml" />
+    <None Remove="06-Resource\Templates\SwaggerDoc.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Templating\Templates\SwaggerDoc.cshtml">
+    <EmbeddedResource Include="06-Resource\Templates\SwaggerDoc.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

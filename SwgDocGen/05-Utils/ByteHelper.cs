@@ -3,14 +3,14 @@
 namespace SwgDocGen
 {
     /// <summary>
-    /// 二进制助手
+    /// 二进制转换助手
     /// </summary>
     public class ByteHelper
     {
         /// <summary>
         /// 流转二进制
         /// </summary>
-        /// <param name="stream"></param>
+        /// <param name="stream">流</param>
         /// <returns></returns>
         public static byte[] StreamToBytes(Stream stream)
         {
@@ -24,7 +24,7 @@ namespace SwgDocGen
         /// <summary>
         /// 二进制转流
         /// </summary>
-        /// <param name="bytes"></param>
+        /// <param name="bytes">byte数组</param>
         /// <returns></returns>
         public static Stream BytesToStream(byte[] bytes)
         {

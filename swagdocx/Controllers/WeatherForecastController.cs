@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using SwgDocGen;
+using SwgDocGen._01_Abstractions;
+using SwgDocGen._02_Implements;
 
 namespace swagdocx.Controllers
 {
@@ -31,12 +33,14 @@ namespace swagdocx.Controllers
         };
 
         public ISwaggerProvider SwaggerGenerator { get; }
-        public IOptions<SpireDocHelper> SpireDocHelper { get; }
+        public IGenerator GeneratorWordDoc { get; }
 
-        public WeatherForecastController(ISwaggerProvider SwaggerGenerator, IOptions<SpireDocHelper> SpireDocHelper)
+
+        public WeatherForecastController(ISwaggerProvider SwaggerGenerator, IGenerator  GeneratorWordDoc)
         {
             this.SwaggerGenerator = SwaggerGenerator;
-            this.SpireDocHelper = SpireDocHelper;
+            this.GeneratorWordDoc = GeneratorWordDoc;
+            
         }
 
         /// <summary>
@@ -47,8 +51,7 @@ namespace swagdocx.Controllers
         public IActionResult GetSwDoc()
         {
             var document = SwaggerGenerator.GetSwagger("v1");
-            var memi = string.Empty;
-            var stream = SpireDocHelper.Value.GetSwDoc(document, out memi);
+            var stream = GeneratorWordDoc.Generator(document, out var memi);
             return File(stream, memi, "api简化文档.doc");
         }
 
@@ -60,8 +63,7 @@ namespace swagdocx.Controllers
         public IActionResult GetSwDocByPath()
         {
             var document = SwaggerGenerator.GetSwagger("v1");
-            var memi = string.Empty;
-            var stream = new SpireDocHelper().GetSwDoc(document, out memi, "Templates\\SwaggerDoc.cshtml");
+            var stream =  GeneratorWordDoc.Generator(document, out var memi, "Templates\\SwaggerDoc.cshtml");
             return File(stream, memi, "api简化文档.doc");
         }
     }
